@@ -1,0 +1,12 @@
+linux : pip install 처럼 apt get 으로 라이브러리 설치가 가능하고 이게 한곳에 모임
+windows : 라이브러리 설치 명령어가 없고 내가 따로 다운받아서 쓰기때문에 어디에 라이브러리 저장될 지 모름
+그래서 linux는 package 위치를 잘 찾는데, 윈도우는 라이브러리가 어디있는지 내가 써줘야댐
+그 명령어가 "-DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake"
+
+즉, 빌드할 때 cmake .. "-DCMAKE_TOOLCHAIN_FILE= [vcpkg path]/scripts/buildsystems/vcpkg.cmake" 이걸 써줘야된다.
+
+>> 이렇게 해 주면 된다.
+mkdir build && cd build
+cmake .. "-DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake"
+
+
