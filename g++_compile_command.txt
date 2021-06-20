@@ -1,0 +1,7 @@
+특정 애들 컴파일
+g++ -std=c++17 ./code/main.cpp ./code/increment_and_sum.cpp ./code/vect_add_one.cpp && ./a.out
+
+path내 모든 .cpp object file(-c) -> exe 로 컴파일
+g++ -c *.cpp
+g++ *.o
+a.exe

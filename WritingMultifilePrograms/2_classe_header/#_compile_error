@@ -1,0 +1,2 @@
+header 있으니까 같이 compile 해 줘야 함
+terminal command : g++ car.cpp car_main.cpp
