@@ -3,13 +3,23 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: g++.exe 활성 파일 빌드",
-			"command": "C:\\MinGW\\bin\\g++.exe",
+			"label": "C/C++: g++-9 build active file",
+			"command": "/bin/g++-9",
+			// Note that the compiler has been called with the option -fno-elide-constructors 
+			// to turn off an optimization techniques called copy elision, 
+			// which would make it harder to understand the various calls and 
+			// the operations they entail. This technique is guaranteed to be used as of C++17, 
+			// which is why we are also reverting to the C++11 standard for the remainder of 
+			// this chapter using -std=c++11. Until now, no move operation has been performed yet 
+			// as all of the above calls were involving lvalues. 
 			"args": [
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				"${fileDirname}/${fileBasenameNoExtension}",
+				"-std=c++11",
+				"-fno-elide-constructors",
+				"-pthread"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
