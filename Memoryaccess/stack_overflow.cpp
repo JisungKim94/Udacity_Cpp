@@ -8,8 +8,8 @@ void stack_overflow(int cnt, int *p_variable_first) {
 
 int main() {
   int variable_first = 0;
-  int *p_variable_first = &variable_first;
   int cnt = 0;
+  int *p_variable_first = &variable_first;
   stack_overflow(cnt, p_variable_first);
 
   /* The left-most number keeps track of the recursion depth while the
