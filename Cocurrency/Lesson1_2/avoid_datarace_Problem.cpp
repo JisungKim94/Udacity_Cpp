@@ -2,10 +2,11 @@
 #include <iostream>
 #include <thread>
 
+/* Data race란, a data race requires simultaneous access from two threads */
 /* 이렇게 코드를 짜면 datarace가 발생한다. async 끝나기 전에
-v0.setName("Vehicle 3"); 한게 안먹히고 여전히 Vehicle 2로 남아있는걸 볼 수 있담.
+v0.setName("Vehicle 3"); 한게 안먹히고 여전히 Vehicle 2로 남아있는걸 볼
+수 있담.
 */
-
 class Vehicle {
 public:
   // default constructor
